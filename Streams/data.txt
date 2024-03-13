@@ -1,0 +1,116 @@
+In common usage, data (US: /ËˆdÃ¦tÉ™/; UK: /ËˆdeÉªtÉ™/) is a collection of discrete or 
+continuous values that convey information, describing the quantity, quality, fact, 
+statistics, other basic units of meaning, or simply sequences of symbols that may be 
+further interpreted formally. A datum is an individual value in a collection of data. 
+Data is usually organized into structures such as tables that provide additional context 
+and meaning, and which may themselves be used as data in larger structures. Data may be 
+used as variables in a computational process.[1][2] Data may represent abstract ideas or
+ concrete measurements.[3] Data is commonly used in scientific research, economics, and 
+ in virtually every other form of human organizational activity. Examples of data sets 
+ include price indices (such as consumer price index), unemployment rates, literacy 
+ rates, and census data. In this context, data represents the raw facts and figures 
+ from which useful information can be extracted.
+
+Data is collected using techniques such as measurement, observation, query, or analysis, 
+and is typically represented as numbers or characters which may be further processed. 
+Field data is data that is collected in an uncontrolled in-situ environment. 
+Experimental data is data that is generated in the course of a controlled scientific experiment. 
+Data is analyzed using techniques such as calculation, reasoning, discussion, presentation, 
+visualization, or other forms of post-analysis. Prior to analysis, raw data (or unprocessed data) 
+is typically cleaned: Outliers are removed and obvious instrument or data entry errors are corrected.
+
+Data can be seen as the smallest units of factual information that can be used as a 
+basis for calculation, reasoning, or discussion. Data can range from abstract ideas to 
+concrete measurements, including, but not limited to, statistics. Thematically connected 
+data presented in some relevant context can be viewed as information. Contextually 
+connected pieces of information can then be described as data insights or intelligence. 
+The stock of insights and intelligence that accumulates over time resulting from the 
+synthesis of data into information, can then be described as knowledge. Data has been
+ described as "the new oil of the digital economy".[4][5] Data, as a general concept, 
+refers to the fact that some existing information or knowledge is represented or coded 
+in some form suitable for better usage or processing.
+
+Advances in computing technologies have led to the advent of big data, which usually 
+refers to very large quantities of data, usually at the petabyte scale. Using traditional
+ data analysis methods and computing, working with such large (and growing) datasets is 
+ difficult, even impossible. (Theoretically speaking, infinite data would yield infinite 
+ information, which would render extracting insights or intelligence impossible.) 
+ In response, the relatively new field of data science uses machine learning (and other 
+ artificial intelligence (AI)) methods that allow for efficient applications of analytic
+  methods to big data.
+
+Etymology and terminology
+Further information: Data (word)
+The Latin word data is the plural of datum, "(thing) given", neuter past participle of 
+dare, "to give".[6] The first English use of the word "data" is from the 1640s. 
+The word "data" was first used to mean "transmissible and storable computer information" 
+in 1946. The expression "data processing" was first used in 1954.[6]
+
+When "data" is used more generally as a synonym for "information", it is treated as a 
+mass noun in singular form. This usage is common in everyday language and in technical 
+and scientific fields such as software development and computer science. One example of 
+this usage is the term "big data". When used more specifically to refer to the processing
+ and analysis of sets of data, the term retains its plural form. This usage is common in 
+ natural sciences, life sciences, social sciences, software development and computer 
+ science, and grew in popularity in the 20th and 21st centuries. Some style guides do not 
+ recognize the different meanings of the term, and simply recommend the form that best 
+ suits the target audience of the guide. For example, APA style as of the 7th edition 
+ requires "data" to be treated as a plural form.[7]
+
+Meaning
+
+Adrien Auzout's "A TABLE of the Apertures of Object-Glasses" from a 1665 article in 
+Philosophical Transactions
+See also: DIKW pyramid
+Data, information, knowledge, and wisdom are closely related concepts, but each has its 
+role concerning the other, and each term has its meaning. According to a common view, 
+data is collected and analyzed; data only becomes information suitable for making 
+decisions once it has been analyzed in some fashion.[8] One can say that the extent to 
+which a set of data is informative to someone depends on the extent to which it is 
+unexpected by that person. The amount of information contained in a data stream may be 
+characterized by its Shannon entropy.
+
+Knowledge is the awareness of its environment that some entity possesses, whereas data 
+merely communicate that knowledge. For example, the entry in a database specifying the 
+height of Mount Everest is a datum that communicates a precisely-measured value. This 
+measurement may be included in a book along with other data on Mount Everest to describe 
+the mountain in a manner useful for those who wish to decide on the best method to climb 
+it. An awareness of the characteristics represented by this data is knowledge.
+
+Data is often assumed to be the least abstract concept, information the next least, and 
+knowledge the most abstract.[9] In this view, data becomes information by interpretation; 
+e.g., the height of Mount Everest is generally considered "data", a book on Mount Everest
+ geological characteristics may be considered "information", and a climber's guidebook 
+ containing practical information on the best way to reach Mount Everest's peak may be 
+ considered "knowledge". "Information" bears a diversity of meanings that ranges from 
+ everyday usage to technical use. This view, however, has also been argued to reverse 
+ how data emerges from information, and information from knowledge.[10] Generally speaking,
+  the concept of information is closely related to notions of constraint, communication, 
+control, data, form, instruction, knowledge, meaning, mental stimulus, pattern, perception,
+and representation. Beynon-Davies uses the concept of a sign to differentiate between data and information; data is a series of symbols, while information occurs when the symbols are used to refer to something.[11][12]
+
+Before the development of computing devices and machines, people had to manually collect 
+data and impose patterns on it. Since the development of computing devices and machines, 
+these devices can also collect data. In the 2010s, computers are widely used in many 
+fields to collect data and sort or process it, in disciplines ranging from marketing, 
+analysis of social services usage by citizens to scientific research. These patterns in 
+data are seen as information that can be used to enhance knowledge. These patterns may 
+be interpreted as "truth" (though "truth" can be a subjective concept) and may be 
+authorized as aesthetic and ethical criteria in some disciplines or cultures. Events 
+that leave behind perceivable physical or virtual remains can be traced back through data. 
+Marks are no longer considered data once the link between the mark and observation is 
+broken.[13]
+
+Mechanical computing devices are classified according to how they represent data. 
+An analog computer represents a datum as a voltage, distance, position, or other physical 
+quantity. A digital computer represents a piece of data as a sequence of symbols drawn 
+from a fixed alphabet. The most common digital computers use a binary alphabet, that is, 
+an alphabet of two characters typically denoted "0" and "1". More familiar representations, 
+such as numbers or letters, are then constructed from the binary alphabet. Some special 
+forms of data are distinguished. A computer program is a collection of data, which can 
+be interpreted as instructions. Most computer languages make a distinction between 
+programs and the other data on which programs operate, but in some languages, notably 
+Lisp and similar languages, programs are essentially indistinguishable from other data. 
+It is also useful to distinguish metadata, that is, a description of other data. A 
+similar yet earlier term for metadata is "ancillary data." The prototypical example of 
+metadata is the library catalog, which is a description of the contents of books.
