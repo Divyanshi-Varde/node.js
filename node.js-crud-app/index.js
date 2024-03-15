@@ -1,7 +1,7 @@
 const fs = require("fs");
 
-function read() {
-  fs.readFile("./data.json", "utf-8",(err, data) => {
+function read(callback) {
+  fs.readFile("./data.json", "utf-8", (err, data) => {
     if (err) {
       console.log(err);
     } else {
@@ -19,16 +19,16 @@ function write(data, callback) {
   });
 }
 
+function readUsers() {
+  read((users) => {
+    console.log(users);
+  });
+}
+
 function createUser(newUser) {
   read((users) => {
     users.push(newUser);
     write(users, () => console.log("User added"));
-  });
-}
-
-function readUsers() {
-  read((users) => {
-    console.log(users);
   });
 }
 
@@ -78,7 +78,5 @@ switch (operation) {
     deleteUser(deleted);
     break;
   default:
-    console.log(
-      "No such command or operation found!"
-    );
+    console.log("No such command or operation found!");
 }

@@ -1,9 +1,1 @@
-[
-  { "id": 1, "user_name": "Sheelah", "email": "samery0@auda.org.au" },
-  { "id": 2, "user_name": "Morganne", "email": "mroseman1@senate.gov" },
-  { "id": 3, "user_name": "Karna", "email": "kobruen2@mac.com" },
-  { "id": 5, "user_name": "Ariana", "email": "aspeke4@usda.gov" },
-  { "id": 6, "user_name": "Melanie", "email": "mmcclifferty5@oracle.com" },
-  { "id": 7, "user_name": "Shandie", "email": "sprickett6@privacy.gov.au" },
-  { "id": 10, "user_name": "divyanshi", "email": "varde@gmail.com" }
-]
+[{"id":1,"user_name":"Sheelah","email":"samery0@auda.org.au"},{"id":2,"user_name":"dinky"},{"id":3,"user_name":"Karna","email":"kobruen2@mac.com"}]
