@@ -3,18 +3,20 @@ import { DataSource } from "typeorm";
 import express from "express";
 import { User } from "./entities/User";
 import { Profile } from "./entities/Profile";
+import dotenv from "dotenv";
 
 const port = 8000;
 const app = express();
 app.use(express.json());
+dotenv.config();
 
 const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
-  port: process.env.PORT ? parseInt(process.env.PORT) : undefined,
-  username: process.env.USERNAME,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+  port: Number(process.env.POSTGRES_PORT),
+  username: process.env.POSTGRES_USERNAME,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DATABASE,
   // entities: ["src/entities/*.ts,.js"],
   entities: [User, Profile],
   synchronize: true,
@@ -25,19 +27,18 @@ app.get("/", async function (req, res) {
   const userRepo = AppDataSource.getRepository(User);
 
   //find all records
-//   const allRecords = await userRepo.find();
-//   res.send(allRecords);
+  //   const allRecords = await userRepo.find();
+  //   res.send(allRecords);
 
-//   create a new record
+  //   create a new record
 
+  //     let user: User = new User();
+  //     user.email = "div@gmailcom";
+  //     user.firstName = "divyanshi";
+  //     user.lastName = "varde";
 
-//     let user: User = new User();
-//     user.email = "div@gmailcom";
-//     user.firstName = "divyanshi";
-//     user.lastName = "varde";
-
-//     const userInserted = await userRepo.save(user);
-//     res.json(userInserted);
+  //     const userInserted = await userRepo.save(user);
+  //     res.json(userInserted);
 
   //delete a record
   //   await userRepo.delete(2);

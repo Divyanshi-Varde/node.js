@@ -3,19 +3,21 @@ import { DataSource } from "typeorm";
 import express from "express";
 import { Products } from "./entities/Products";
 import { Company } from "./entities/Company";
-import { copyFile } from "fs";
+import dotenv from "dotenv";
 
 const port = 3000;
 const app = express();
 app.use(express.json());
+dotenv.config();
 
+// console.log(process.env);
 const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
-  port: process.env.PORT ? parseInt(process.env.PORT) : undefined,
-  username: process.env.USERNAME,
-  password: process.env.PASSWORD,
-  database: process.env.DATABASE,
+  port: Number(process.env.POSTGRES_PORT),
+  username: process.env.POSTGRES_USERNAME,
+  password: process.env.POSTGRES_PASSWORD,
+  database: process.env.POSTGRES_DATABASE,
   entities: [Products, Company],
   synchronize: true,
   logging: true,
