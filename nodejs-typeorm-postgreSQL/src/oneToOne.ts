@@ -1,14 +1,14 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import express from "express";
-import { User } from "./entities/User";
-import { Profile } from "./entities/Profile";
-import dotenv from "dotenv"
+import { User } from "./entities/user.entity";
+import { Profile } from "./entities/profile.entity";
+import dotenv from "dotenv";
 
 const port = 8080;
 const app = express();
 app.use(express.json());
-dotenv.config()
+dotenv.config();
 
 const AppDataSource = new DataSource({
   type: "postgres",

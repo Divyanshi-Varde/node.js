@@ -1,8 +1,8 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
 import express from "express";
-import { User } from "./entities/User";
-import { Profile } from "./entities/Profile";
+import { User } from "./entities/user.entity";
+import { Profile } from "./entities/Profile.entity";
 import dotenv from "dotenv";
 
 const port = 8000;
@@ -10,15 +10,16 @@ const app = express();
 app.use(express.json());
 dotenv.config();
 
-const AppDataSource = new DataSource({
+export const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
   port: Number(process.env.POSTGRES_PORT),
   username: process.env.POSTGRES_USERNAME,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DATABASE,
-  // entities: ["src/entities/*.ts,.js"],
   entities: [User, Profile],
+  migrationsTableName: "new_table",
+  migrations: ["src/migrations/*{.ts,.js}"],
   synchronize: true,
   logging: true,
 });

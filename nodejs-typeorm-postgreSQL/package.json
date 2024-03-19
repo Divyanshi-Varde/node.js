@@ -7,8 +7,12 @@
     "start:dev": "nodemon ./src/app.ts",
     "start:devOnetoOne": "nodemon ./src/oneToOne.ts",
     "start:devOnetoMany": "nodemon ./src/ManyToOne-OneToMany.ts",
+    "start:devManytoMany": "nodemon ./src/ManytoMany.ts",
     "build": "tsc -p .",
-    "start:prod": "node ./dist/app.js"
+    "start:prod": "node ./dist/app.js",
+    "migration:create": "typeorm migration:create ./src/migrations/migration_table",
+    "migration:run": "ts-node -T node_modules/typeorm/cli.js migration:run -d src/app.ts",
+    "migration:revert": "ts-node -T node_modules/typeorm/cli.js migration:revert -d src/app.ts"
   },
   "keywords": [],
   "author": "",

@@ -1,8 +1,8 @@
 import "reflect-metadata";
-import { DataSource } from "typeorm";
+import { DataSource, LessThan, LessThanOrEqual } from "typeorm";
 import express from "express";
-import { Products } from "./entities/Products";
-import { Company } from "./entities/Company";
+import { Products } from "./entities/products.entity";
+import { Company } from "./entities/Company.entity";
 import dotenv from "dotenv";
 
 const port = 3000;
@@ -55,8 +55,37 @@ app.get("/", async function (req, res) {
 
   // find or filter a record
 
-  let companyFound = await companyRepo.find({ relations: { products: true } });
-  res.send(companyFound);
+  //   let companyFound = await companyRepo.find({
+  //     relations: { products: true },
+  //     where: {
+  //       products: {
+  //         price: LessThanOrEqual(100000),
+  //       },
+  //     },
+  //   });
+  //   res.send(companyFound);
+
+  //update a record
+  //   const company = await companyRepo.findOne({ where: { id: 3 } });
+
+  //   if (company !== null && company !== undefined) {
+  //     company.name = "Apple updated";
+  //     if (company.products) {
+  //       for (let i = 0; i < company.products.length; i++) {
+  //         company.products[i].price = 250000;
+  //       }
+  //     }
+
+  //     const dataChanged = await companyRepo.save(company);
+  //     res.send(dataChanged);
+  //   } else {
+  //     res.status(404).send("Company not found");
+  //   }
+
+  //delete a record
+
+  await companyRepo.delete(3);
+  res.send("Record deleted successfully!");
 });
 
 AppDataSource.initialize()
