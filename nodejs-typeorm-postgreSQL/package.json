@@ -6,6 +6,7 @@
   "scripts": {
     "start:dev": "nodemon ./src/app.ts",
     "start:devOnetoOne": "nodemon ./src/oneToOne.ts",
+    "start:devOnetoMany": "nodemon ./src/ManyToOne-OneToMany.ts",
     "build": "tsc -p .",
     "start:prod": "node ./dist/app.js"
   },

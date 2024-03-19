@@ -11,10 +11,10 @@ app.use(express.json());
 const AppDataSource = new DataSource({
   type: "postgres",
   host: "localhost",
-  port: 5432,
-  username: "postgres",
-  password: "postgres@123",
-  database: "typeorm_db",
+  port: process.env.PORT ? parseInt(process.env.PORT) : undefined,
+  username: process.env.USERNAME,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
   // entities: ["src/entities/*.ts,.js"],
   entities: [User, Profile],
   synchronize: true,
@@ -49,20 +49,27 @@ app.get("/", async function (req, res) {
 
   //update a record
 
-  const userFound = await userRepo.findOne({ where: { id: 9 } });
+  //   const userFound = await userRepo.findOne({
+  //     where: { id: 9 },
+  //     relations: ["profile"],
+  //   });
 
-  if (userFound) {
-    userFound.email = "varde@gmail.com";
-    userFound.firstName = "Updated";
-    userFound.lastName = "updated";
-    userFound.profile.gender = "male";
-    userFound.profile.photo = "no photo";
+  //   if (userFound) {
+  //     userFound.email = "varde@gmail.com";
+  //     userFound.firstName = "Updated";
+  //     userFound.lastName = "updated";
+  //     userFound.profile.gender = "male";
+  //     userFound.profile.photo = "no photo";
 
-    const updatedUser = await userRepo.save(userFound);
-    res.json(updatedUser);
-  } else {
-    res.send("No such user found!");
-  }
+  //     const updatedUser = await userRepo.save(userFound);
+  //     res.json(updatedUser);
+  //   } else {
+  //     res.send("No such user found!");
+  //   }
+
+  //delete a record
+  await profileRepo.delete(1);
+  res.send("Profile deleted successfully!");
 });
 
 AppDataSource.initialize()
