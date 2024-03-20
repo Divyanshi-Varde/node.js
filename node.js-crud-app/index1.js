@@ -21,19 +21,56 @@ function write(data, callback) {
   });
 }
 
-const server = http.createServer((req, res) => {
-  const { url } = req;
+function getUserIdFromUrl(url) {
+  const segments = url.split("/");
+  return parseInt(segments[segments.length - 1]);
+}
 
+const server = http.createServer((req, res) => {
   if (req.method === "GET" && req.url === "/users") {
     read((users) => {
       //   res.sendStatus(200);
       res.end(JSON.stringify(users));
     });
-  } else if (req.method === "POST" && req.url === "/createUser") {
-    const { body, method } = req;
-    console.log({ body, method });
+  } else if (req.method === "POST" && req.url === "/create") {
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+    req.on("end", () => {
+      const newUser = JSON.parse(body);
+      read((users) => {
+        const newUsers = [...users, newUser];
+        write(newUsers, () => {
+          console.log(`User created: ${JSON.stringify(newUser)}`);
+          res.end(JSON.stringify(newUser));
+        });
+      });
+    });
+  } else if (req.method === "PUT" && req.url.startsWith("/update/")) {
+    const userId = getUserIdFromUrl(req.url);
+    let body = "";
+    req.on("data", (chunk) => {
+      body += chunk.toString();
+    });
+    req.on("end", () => {
+      const updatedUser = JSON.parse(body);
+      read((users) => {
+        const updatedUsers = users.map((user) => {
+          if (user.id === userId) {
+            return { ...user, ...updatedUser };
+          } else {
+            return user;
+          }
+        });
+        write(updatedUsers, () => {
+          console.log(`User updated with id ${userId}`);
+          res.end(JSON.stringify(updatedUsers));
+        });
+      });
+    });
   } else if (req.method === "DELETE" && req.url.startsWith("/delete/")) {
-    const userId = parseInt(req.url.substring(8));
+    const userId = getUserIdFromUrl(req.url);
     read((users) => {
       const filteredUsers = users.filter((user) => user.id !== userId);
       write(filteredUsers, () => {
